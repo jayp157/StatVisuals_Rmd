@@ -1,0 +1,36 @@
+---
+title: "Statvisuals markdown"
+author: "Jay Patel"
+output: html_document
+date: "2024-11-17"
+---
+
+The "StatVisuals" package is designed to help R users perform statistical analysis and visualize results with ease. Below, I'll provide some information about the functions that I'll use for my final project.
+
+# Displaying the in-built patients data
+print(patients)
+
+# Displaying the in-built biomarkers data
+print(biomarkers)
+
+# Installing devtools package to access GitHub packages
+install.packages("devtools")
+devtools::install_github("dgarrimar/manta")
+
+# Loading the manta package
+library(manta)
+
+# Running manta for statistical analysis
+manta(biomarkers ~ ., data = patients)
+
+# Installing and loading ggplot2 package
+install.packages("ggplot2")
+library(ggplot2)
+
+# Creating a scatter plot for biomarker1 vs biomarker2
+ggplot(biomarkers, aes(x = biomarker1, y = biomarker2)) +
+  geom_point(color = "black") +
+  theme_minimal() +
+  labs(title = "biomarker 1vs2", x = "Biomarker1", y = "Biomarker2")
+
+
